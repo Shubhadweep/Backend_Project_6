@@ -1,0 +1,48 @@
+<%- include('../Includes/header.ejs')%>
+
+<link rel="stylesheet" href="/CSS/form.css">
+
+<%-include('../Includes/navbar.ejs')%>
+
+</head>
+<body>
+
+<main>
+
+    <div class="container mt-3">
+        <form action="/postOrder" method="POST">
+            <h2 class="text-center text-info">Place Order</h2>
+            <div class="row jumbotron box8">
+              <div class="col-sm-12 mx-t3 mb-4">
+            </div>
+            
+                
+              
+            <div class="col-sm-6 form-group">
+              <label for="email">Order Number</label>
+              <input type="text" class="form-control" name="OrderId" id="OrderId" placeholder="Enter Your Order Number." required>
+              
+            </div>
+           
+            
+            <div class="col-sm-6 form-group">
+              <select name="cid" id="cid">
+                <option >Choose Your Name </option>
+                <%data.map(value=>{%>
+                  <option value="<%=value._id%>"><%=value.userName%></option>
+                <%})%>
+                
+              </select>
+            </div>
+            
+            <div class="col-sm-6 form-group">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+      
+          </div>
+        </form>
+      </div>
+
+</main>
+
+<%-include('../Includes/footer.ejs')%>

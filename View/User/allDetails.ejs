@@ -1,0 +1,43 @@
+<%- include('../includes/header.ejs')%>
+<title><%=title%></title>
+  </head>
+  <body>
+    <%- include('../includes/navbar.ejs')%>
+
+    <div class="dropdown d-flex justify-content-end">
+      <button class="btn btn-warning dropdown-toggle me-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Search by City
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="">Kolkata</a></li>
+        <li><a class="dropdown-item" href="">Mednipur</a></li>
+        <li><a class="dropdown-item" href="">Ranaghat</a></li>
+      </ul>
+    </div> 
+    <% if(info.length>0){%>
+    
+    <table class="table table-bordered mt-5 mb-5">
+        <thead>
+          <tr>
+            <th scope="col">Order Id</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Customer City</th>
+            <th scope="col">Customer Email</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for(let obj of info){%>
+          <tr>
+            <td><%=obj.Order_Id%></td>
+            <td><%=obj.allData.userName%></td>
+            <td><%=obj.allData.city%></td>
+            <td><%=obj.allData.email%></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+      <%}else{%>
+        <h2>No Data Found</h2>
+        <%}%>
+    </main>
+    <%- include('../includes/footer.ejs')%>

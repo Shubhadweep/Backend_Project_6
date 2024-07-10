@@ -1,0 +1,49 @@
+<%- include('../Includes/header.ejs')%>
+
+<link rel="stylesheet" href="/CSS/form.css">
+
+<%-include('../Includes/navbar.ejs')%>
+
+</head>
+<body>
+
+<main>
+
+    <div class="container mt-3">
+        <form action="/postReg" method="POST">
+            <h2 class="text-center text-info">Register With Your Details</h2>
+            <div class="row jumbotron box8">
+              <div class="col-sm-12 mx-t3 mb-4">
+            </div>
+            
+                
+              
+            <div class="col-sm-6 form-group">
+              <label for="email">User Name</label>
+              <input type="text" class="form-control" name="uName" id="uName" placeholder="Enter your full Name." required>
+              
+            </div>
+
+            <div class="col-sm-6 form-group">
+              <label for="email">City</label>
+              <input type="text" class="form-control" name="uCity" id="uCity" placeholder="Enter your full Name." required>
+              
+            </div>
+           
+            
+            <div class="col-sm-6 form-group">
+              <label for="pass">Email Id</label>
+              <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email Id." required>
+            </div>
+            
+            <div class="col-sm-6 form-group">
+              <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+      
+          </div>
+        </form>
+      </div>
+
+</main>
+
+<%-include('../Includes/footer.ejs')%>
